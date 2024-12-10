@@ -1,4 +1,6 @@
 <script setup>
+import SectionWithNetwork from './layout/SectionWithNetwork.vue'
+
 const investments = [
   {
     title: 'Decentralized Education',
@@ -19,8 +21,8 @@ const investments = [
 </script>
 
 <template>
-  <section id="investments" class="section-padding bg-secondary relative overflow-hidden">
-    <div class="container-width">
+  <SectionWithNetwork id="investments">
+    <div class="container-width relative z-10">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
           Impact Investments
@@ -34,12 +36,12 @@ const investments = [
       <div class="grid md:grid-cols-3 gap-8">
         <div v-for="investment in investments" 
              :key="investment.title"
-             class="p-6 rounded-xl bg-secondary-light hover:bg-secondary-light/80 transition-all duration-300 transform hover:-translate-y-1">
+             class="p-6 rounded-xl backdrop-blur-sm bg-secondary/50 hover:bg-secondary/60 transition-all duration-300 transform hover:-translate-y-1">
           <div class="text-4xl mb-4">{{ investment.icon }}</div>
           <h3 class="text-xl font-bold mb-3 text-primary">{{ investment.title }}</h3>
-          <p class="text-gray-400">{{ investment.description }}</p>
+          <p class="text-gray-300">{{ investment.description }}</p>
         </div>
       </div>
     </div>
-  </section>
+  </SectionWithNetwork>
 </template>
