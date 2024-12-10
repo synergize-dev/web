@@ -1,68 +1,49 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { useMouse } from '@vueuse/core'
 
 const cursor = ref(null)
-const { x, y } = useMouse()
+let mouseX = 0
+let mouseY = 0
 
-const updateCursor = () => {
-  if (!cursor.value) return
-  cursor.value.style.transform = `translate(${x.value}px, ${y.value}px)`
+const onMouseMove = (e) => {
+  mouseX = e.clientX
+  mouseY = e.clientY
+  if (cursor.value) {
+    cursor.value.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`
+  }
 }
 
 onMounted(() => {
-  if (cursor.value) {
-    window.addEventListener('mousemove', updateCursor)
-  }
+  document.addEventListener('mousemove', onMouseMove, { passive: true })
 })
 
 onUnmounted(() => {
-  window.removeEventListener('mousemove', updateCursor)
+  document.removeEventListener('mousemove', onMouseMove)
 })
 </script>
 
 <template>
-  <div ref="cursor" class="cursor-follower">
-    <div class="cursor-circle"></div>
-    <div class="cursor-trail"></div>
+  <div ref="cursor" class="cursor">
+    <div class="cursor-dot"></div>
   </div>
 </template>
 
 <style scoped>
-.cursor-follower {
-  pointer-events: none;
+.cursor {
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
+  top: -4px;
+  left: -4px;
+  z-index: 999999;
+  pointer-events: none;
   will-change: transform;
+  transform-style: preserve-3d;
 }
 
-.cursor-circle {
-  width: 24px;
-  height: 24px;
-  border: 2px solid #6366f1;
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #9333ea;
   border-radius: 50%;
-  position: absolute;
-  top: -12px;
-  left: -12px;
-  animation: pulse 2s infinite;
-}
-
-.cursor-trail {
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0) 70%);
-  border-radius: 50%;
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  opacity: 0.6;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.5); opacity: 0.4; }
-  100% { transform: scale(1); opacity: 0.8; }
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
 }
 </style>

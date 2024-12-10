@@ -9,10 +9,10 @@ import SectionSeparator from './components/layout/SectionSeparator.vue'
 </script>
 
 <template>
-  <div class="min-h-screen relative bg-black">
+  <div class="min-h-screen bg-black">
     <MouseFollower />
     <TheNavbar />
-    <main>
+    <main class="bg-black">
       <HeroSection />
       <SectionSeparator />
       <ServicesSection />
@@ -23,3 +23,31 @@ import SectionSeparator from './components/layout/SectionSeparator.vue'
     </main>
   </div>
 </template>
+
+<style>
+/* Hide default cursor */
+* {
+  cursor: none;
+}
+
+/* Show cursor on interactive elements */
+a, button, input, textarea, select {
+  cursor: pointer !important;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  background-color: black;
+}
+
+body {
+  background-color: black;
+}
+
+/* Ensure proper stacking */
+.cursor {
+  position: fixed !important;
+  z-index: 999999 !important;
+}
+</style>
