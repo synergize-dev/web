@@ -35,17 +35,12 @@ const services = [
       <div class="flex flex-col gap-6 max-w-4xl mx-auto">
         <div v-for="service in services" 
              :key="service.title"
-             :class="[
-               'p-8 rounded-xl backdrop-blur-sm transition-all duration-500 cursor-pointer',
-               service.isVocdoni 
-                 ? 'bg-secondary/70 hover:bg-secondary/90 border-2 border-primary hover:border-accent hover:scale-[1.02] hover:translate-x-2 hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)]' 
-                 : 'bg-secondary/50 hover:bg-secondary/70 hover:scale-[1.01] hover:-translate-x-2 hover:shadow-[0_5px_30px_rgba(255,255,255,0.1)]'
-             ]">
+             class="p-8 rounded-xl backdrop-blur-sm transition-all duration-500 cursor-pointer bg-secondary/70 hover:bg-secondary/90 border-2 border-primary hover:border-accent hover:scale-[1.02] hover:translate-x-2 hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)]">
           <div class="text-4xl mb-4">
             <img v-if="service.isVocdoni" :src="service.icon" alt="Vocdoni Logo" class="h-12 w-auto" />
             <span v-else>{{ service.icon }}</span>
           </div>
-          <h3 class="text-xl font-bold mb-2 text-primary transition-colors duration-500" :class="{'hover:text-accent': service.isVocdoni}">{{ service.title }}</h3>
+          <h3 class="text-xl font-bold mb-2 text-primary hover:text-accent transition-colors duration-500">{{ service.title }}</h3>
           <p class="text-gray-300 transition-colors duration-500" :class="{'group-hover:text-gray-200': true}">{{ service.description }}</p>
         </div>
       </div>
