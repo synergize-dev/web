@@ -2,14 +2,14 @@
   <div class="container-width relative z-10">
     <div class="max-w-5xl mx-auto text-center">
       <div class="logo-container mt-16 mb-4">
-        <img src="/logo.svg" alt="Synergize Logo" class="mx-auto w-32 h-32 object-contain animate-logo hover:scale-105 transition-transform duration-300" />
+        <img src="/logo.svg" alt="Synergize Logo" class="mx-auto w-24 h-24 object-contain animate-logo hover:scale-105 transition-transform duration-300" />
       </div>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mt-16 mb-16 pb-8 min-h-[200px] animate-glow bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-relaxed bg-[length:200%_auto] hover:animate-shine relative">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-12 mb-12 pb-8 min-h-[160px] animate-glow bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-relaxed bg-[length:200%_auto] hover:animate-shine relative">
         Pioneering Decentralized Technologies
       </h1>
       <div class="backdrop-blur-sm bg-secondary-light/30 rounded-2xl p-8 border border-primary/10 shadow-xl">
         <div class="space-y-6">
-          <p class="text-xl text-gray-200">
+          <p class="text-base md:text-lg text-gray-200">
             Shaping the future of digital infrastructure through innovative decentralized solutions. 
             With 14 years of expertise, we transform visionary ideas into robust, scalable systems.
           </p>

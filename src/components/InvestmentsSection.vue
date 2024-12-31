@@ -23,11 +23,11 @@ const investments = [
 <template>
   <SectionWithNetwork id="investments">
     <div class="container-width relative z-10">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
           Impact Investments
         </h2>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        <p class="text-base md:text-lg text-gray-300 max-w-3xl mx-auto">
           We invest in early-stage projects that align with our vision of a more equitable, 
           decentralized future. Our focus is on initiatives that create lasting social impact.
         </p>
@@ -36,10 +36,10 @@ const investments = [
       <div class="grid md:grid-cols-3 gap-8">
         <div v-for="investment in investments" 
              :key="investment.title"
-             class="p-8 rounded-xl backdrop-blur-sm transition-all duration-500 cursor-pointer bg-secondary/50 hover:bg-secondary/70 hover:scale-[1.02] hover:shadow-[0_5px_30px_rgba(255,255,255,0.1)]">
-          <div class="text-4xl mb-4 transition-transform duration-500 group-hover:scale-110">{{ investment.icon }}</div>
-          <h3 class="text-xl font-bold mb-3 text-primary transition-colors duration-500">{{ investment.title }}</h3>
-          <p class="text-gray-300 transition-colors duration-500 group-hover:text-gray-200">{{ investment.description }}</p>
+             class="p-6 rounded-xl backdrop-blur-sm transition-all duration-500 cursor-pointer bg-secondary/70 hover:bg-secondary/90 border-2 border-primary hover:border-accent hover:scale-[1.02] hover:translate-x-2 hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)]">
+          <div class="text-3xl mb-3 transition-transform duration-500 group-hover:scale-110">{{ investment.icon }}</div>
+          <h3 class="text-lg font-bold mb-2 text-primary hover:text-accent transition-colors duration-500">{{ investment.title }}</h3>
+          <p class="text-sm md:text-base text-gray-300 transition-colors duration-500 group-hover:text-gray-200">{{ investment.description }}</p>
         </div>
       </div>
     </div>
