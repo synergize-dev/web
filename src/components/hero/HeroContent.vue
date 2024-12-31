@@ -1,10 +1,10 @@
 <template>
   <div class="container-width relative z-10">
     <div class="max-w-5xl mx-auto text-center">
-      <div class="logo-container mb-8">
+      <div class="logo-container mt-16 mb-4">
         <img src="/logo.svg" alt="Synergize Logo" class="mx-auto w-32 h-32 object-contain animate-logo hover:scale-105 transition-transform duration-300" />
       </div>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mt-16 mb-16 pb-8 min-h-[200px] animate-glow bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-relaxed bg-[length:200%_auto] hover:animate-shine relative">
         Pioneering Decentralized Technologies
       </h1>
       <div class="backdrop-blur-sm bg-secondary-light/30 rounded-2xl p-8 border border-primary/10 shadow-xl">
@@ -29,6 +29,40 @@
 </template>
 
 <style scoped>
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 25px rgba(var(--primary-rgb), 0.5));
+    text-shadow: 
+      0 0 30px rgba(var(--primary-rgb), 0.5),
+      0 0 60px rgba(var(--primary-rgb), 0.3),
+      0 0 90px rgba(var(--primary-rgb), 0.2);
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(var(--primary-rgb), 0.7));
+    text-shadow: 
+      0 0 50px rgba(var(--primary-rgb), 0.7),
+      0 0 80px rgba(var(--primary-rgb), 0.5),
+      0 0 120px rgba(var(--primary-rgb), 0.3);
+  }
+}
+
+@keyframes shine {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+
+.animate-glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+.animate-shine:hover {
+  animation: shine 3s linear infinite;
+}
+
 @keyframes logoAppear {
   0% {
     opacity: 0;
