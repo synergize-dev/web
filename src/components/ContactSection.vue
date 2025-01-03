@@ -11,7 +11,7 @@ import SectionWithNetwork from './layout/SectionWithNetwork.vue'
         </h2>
         <div class="backdrop-blur-sm bg-secondary/50 rounded-2xl p-8 mb-8">
           <p class="text-gray-200 mb-8 text-lg">
-            Ready to revolutionize your blockchain project? Contact us to discuss how we can help.
+            Ready to revolutionize your project? Contact us to discuss how we can help.
           </p>
           <a href="mailto:hello@synergize.dev" 
              class="inline-flex items-center space-x-2 btn-primary text-lg group">

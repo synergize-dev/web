@@ -13,7 +13,7 @@
             Shaping the future of digital infrastructure through innovative decentralized solutions. 
             With 14 years of expertise, we transform visionary ideas into robust, scalable systems.
           </p>
-          <p class="text-xl text-gray-200">
+          <p class="text-base md:text-lg text-gray-200">
             Committed to Self-Sovereign technology, we empower organizations to achieve true digital 
             autonomy while maintaining complete ownership of their identity and data.
           </p>
@@ -92,7 +92,7 @@
 
 .animate-logo {
   opacity: 0;
-  animation: logoAppear 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: logoAppear 4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
 }
 
@@ -110,7 +110,7 @@
 }
 
 .logo-container {
-  animation: pulse 3s ease-in-out infinite;
+  animation: pulse 6s ease-in-out infinite;
   border-radius: 50%;
   padding: 0.5rem;
   display: inline-block;
